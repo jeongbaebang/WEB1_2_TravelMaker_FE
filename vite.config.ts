@@ -14,5 +14,6 @@ export default defineConfig(({ mode }) => {
       __VITE_MSW_ENABLED__: JSON.stringify(env.VITE_MSW_ENABLED),
     },
     assetsInclude: ["./src/assets/fonts/Ticketing-Regular.otf"],
+    base: "./",
   };
 });
