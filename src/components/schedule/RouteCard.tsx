@@ -48,6 +48,7 @@ const RouteCard: FC<RouteCardProps> = ({ item, onSave, deleteScheduleItem }) => 
       scheduleItemId: item.scheduleItemId,
       markerId: item.markerId,
       address: item.address,
+      itemOrder: item.itemOrder,
       isEditing,
       editableName: editableName || "", // 기본값 제공
       editableContent: editableContent || "", // 기본값 제공
@@ -63,7 +64,7 @@ const RouteCard: FC<RouteCardProps> = ({ item, onSave, deleteScheduleItem }) => 
   return (
     <OuterContainer>
       <TopContainer>
-        <Index>{item.markerId}</Index>
+        <Index>{item.itemOrder}</Index>
         <CloseButton onClick={handleDelete}>
           <CloseIcon />
         </CloseButton>
@@ -85,6 +86,7 @@ const RouteCard: FC<RouteCardProps> = ({ item, onSave, deleteScheduleItem }) => 
 
 export default RouteCard;
 
+// 공통 스타일 정의
 // 공통 스타일 정의
 const FlexBox = styled.div`
   display: flex;
@@ -144,12 +146,12 @@ const CloseButton = styled.button`
 
 const InnerContainer = styled(FlexBox)`
   flex-direction: column;
-  margin-left: 18px;
 `;
 
 const TitleSection = styled(TextEllipsis)`
   width: 350px;
   margin-top: -10px;
+  margin-left: -20px;
   font-size: ${({ theme }) => theme.typography.heading.h2.fontSize};
   color: ${({ theme }) => theme.colors.text.body};
   font-family: ${({ theme }) => theme.typography.fontFamily.main};
@@ -163,6 +165,7 @@ const TitleSection = styled(TextEllipsis)`
 const LocationSection = styled(TextEllipsis)`
   width: 330px;
   margin-top: 5px;
+  margin-left: -35px;
   font-size: ${({ theme }) => theme.typography.body.regular.fontSize};
   color: ${({ theme }) => theme.colors.text.body};
   font-family: ${({ theme }) => theme.typography.fontFamily.main};
