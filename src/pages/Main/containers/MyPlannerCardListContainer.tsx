@@ -21,15 +21,15 @@ const MyPlannerCardListContainer = () => {
     navigate("/createModalRoom");
   };
 
-  const cardList: MyPlannerCardListProps = (roomList ?? []).map((card) => {
-    return {
-      country: card.country,
-      title: card.title,
-      startDate: card.startDate ?? formatDate(new Date()),
-      endDate: card.endDate ?? formatDate(new Date()),
-      onClick: () => handlePlannerCardClick(card.roomId),
-    };
-  });
+  const cardList: MyPlannerCardListProps = Array.isArray(roomList)
+    ? roomList.map((card) => ({
+        country: card.country,
+        title: card.title,
+        startDate: card.startDate ?? formatDate(new Date()),
+        endDate: card.endDate ?? formatDate(new Date()),
+        onClick: () => handlePlannerCardClick(card.roomId),
+      }))
+    : [];
 
   return <MyPlannerCardList items={cardList} onEmptyCardClick={handleEmptyCardClick} />;
 };
