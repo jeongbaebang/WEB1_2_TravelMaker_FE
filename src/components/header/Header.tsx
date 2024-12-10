@@ -1,20 +1,20 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate, Outlet } from "react-router-dom";
 import SmallLogo from "@components/assets/images/SmallLogo.svg";
 import { calcResponsive, calcResponsiveValue } from "@common/styles/theme";
 import Profile from "@components/chat/ChatProfile";
 import useWindowSize from "@common/hooks/useWindowSize";
-import { useUserContext } from "@pages/My/contexts/UserContext";
+// import { useUserContext } from "@pages/My/contexts/UserContext";
 
 export const Header = () => {
   const windowSize = useWindowSize();
   const navigate = useNavigate();
-  const { profileImage, refreshProfile } = useUserContext();
+  // const { profileImage, refreshProfile } = useUserContext();
 
-  useEffect(() => {
-    refreshProfile();
-  }, [refreshProfile]);
+  // useEffect(() => {
+  //   refreshProfile();
+  // }, [refreshProfile]);
 
   return (
     <>
@@ -31,7 +31,7 @@ export const Header = () => {
           <Profile.ClickableImage
             onClick={() => navigate("/my")}
             isInteractive={false}
-            url={profileImage || "https://picsum.photos/200/300"}
+            url={"https://picsum.photos/200/300"}
             size={calcResponsiveValue({ value: 70, window: windowSize, dimension: "height" })}
             hasBackground={false}
           />
