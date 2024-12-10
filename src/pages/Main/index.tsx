@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 import { calcResponsive } from "@common/styles/theme";
 import StartPlannerCardContainer from "./containers/StartPlannerCardContainer";
-// import MyPlannerCardListContainer from "./containers/MyPlannerCardListContainer";
+import MyPlannerCardListContainer from "./containers/MyPlannerCardListContainer";
 
 const Main = () => {
   return (
     <Container>
-      {/* <MyPlannerCardListContainer /> */}
+      <MyPlannerCardListContainer />
       <StartPlannerCardContainer />
     </Container>
   );

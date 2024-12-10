@@ -8,7 +8,7 @@ import { useRoomList } from "../hooks/useRoomList";
 type MyPlannerCardListProps = ComponentProps<typeof MyPlannerCardList>["items"];
 
 const MyPlannerCardListContainer = () => {
-  const { roomList } = useRoomList();
+  const { roomList = [] } = useRoomList();
   const navigate = useTypedNavigate();
 
   const handlePlannerCardClick = (roomId?: string) => {
