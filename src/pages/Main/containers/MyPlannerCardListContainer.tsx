@@ -11,6 +11,8 @@ const MyPlannerCardListContainer = () => {
   const { roomList } = useRoomList();
   const navigate = useTypedNavigate();
 
+  console.log("어떤값이 오나", roomList);
+
   const handlePlannerCardClick = (roomId?: string) => {
     if (roomId) {
       navigate(`/planner/:roomId`, { roomId });
